@@ -1,0 +1,20 @@
+overwrite: true
+schema: "../server/src/graphql/typedefs/schema.graphql"
+documents: './src/**/*.graphql'
+generates:
+  src/graphql/generated.ts:
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-react-query
+    config:
+      exposeQueryKeys: true
+      exposeMutationKeys: true
+      scalars:
+          DateTime: Date
+          EmailAddress: string
+      fetcher:
+        # endpoint: "graphql" # does not translate to string :(
+        # fetchParams:
+        #   headers:
+        #     Content-type: application/json

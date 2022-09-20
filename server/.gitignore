@@ -1,0 +1,12 @@
+
+
+.vscode/
+node_modules/
+.DS_Store
+
+# Ignore built ts files
+dist/**/*
+dist
+
+# Ignore .env file for secrets
+.env

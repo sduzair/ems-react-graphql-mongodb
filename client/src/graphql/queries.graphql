@@ -1,0 +1,222 @@
+query GetEmployees($limit: Int) {
+  employees(limit: $limit) {
+    _id
+    address {
+      address
+      city
+      coordinates {
+        lat
+        lng
+      }
+      postalCode
+      state
+    }
+    age
+    bank {
+      cardExpire
+      cardNumber
+      cardType
+      currency
+      iban
+    }
+    birthDate
+    bloodGroup
+    company {
+      address {
+        address
+        city
+        coordinates {
+          lat
+          lng
+        }
+        postalCode
+        state
+      }
+      dateOfJoining
+      department
+      employeeType
+      name
+      title
+      status
+    }
+    domain
+    ein
+    email
+    eyeColor
+    firstName
+    gender
+    hair {
+      color
+      type
+    }
+    height
+    id
+    image
+    ip
+    lastName
+    macAddress
+    maidenName
+    password
+    phone
+    ssn
+    university
+    userAgent
+    username
+    weight
+  }
+}
+
+query EmployeeTitleRegex($query: EmployeeQueryInput, $limit: Int) {
+  employees(query: $query, limit: $limit) {
+    company {
+      title
+    }
+  }
+}
+
+mutation InsertEmployee($data: EmployeeInsertInput!) {
+  insertOneEmployee(data: $data) {
+    address {
+      address
+      city
+      coordinates {
+        lat
+        lng
+      }
+      postalCode
+      state
+    }
+    age
+    bank {
+      cardExpire
+      cardNumber
+      cardType
+      currency
+      iban
+    }
+    birthDate
+    bloodGroup
+    company {
+      address {
+        address
+        city
+        coordinates {
+          lat
+          lng
+        }
+        postalCode
+        state
+      }
+      dateOfJoining
+      department
+      employeeType
+      name
+      title
+      status
+    }
+    domain
+    ein
+    email
+    eyeColor
+    firstName
+    gender
+    hair {
+      color
+      type
+    }
+    height
+    id
+    image
+    ip
+    lastName
+    macAddress
+    maidenName
+    password
+    phone
+    ssn
+    university
+    userAgent
+    username
+    weight
+  }
+}
+
+mutation DeleteOneEmployee($query: DeleteOneEmployeeInput!) {
+  deleteOneEmployee(query: $query) {
+    deletedCount
+  }
+}
+
+mutation UpdateOneEmployee($set: EmployeeUpdateInput!, $query: EmployeeUpdateOneQueryInput) {
+  updateOneEmployee(set: $set, query: $query) {
+    _id
+  }
+}
+
+query GetOneEmployee($query: OneEmployeeQueryInput!) {
+  oneEmployee(query: $query) {
+    _id
+    address {
+      address
+      city
+      coordinates {
+        lat
+        lng
+      }
+      postalCode
+      state
+    }
+    age
+    bank {
+      cardExpire
+      cardNumber
+      cardType
+      currency
+      iban
+    }
+    birthDate
+    bloodGroup
+    company {
+      address {
+        address
+        city
+        coordinates {
+          lat
+          lng
+        }
+        postalCode
+        state
+      }
+      dateOfJoining
+      department
+      employeeType
+      name
+      title
+      status
+    }
+    domain
+    ein
+    email
+    eyeColor
+    firstName
+    gender
+    hair {
+      color
+      type
+    }
+    height
+    id
+    image
+    ip
+    lastName
+    macAddress
+    maidenName
+    password
+    phone
+    ssn
+    university
+    userAgent
+    username
+    weight
+  }
+}

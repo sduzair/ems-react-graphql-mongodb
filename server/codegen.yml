@@ -1,0 +1,21 @@
+overwrite: true
+schema: "src/graphql/typedefs/schema.graphql"
+documents: null
+generates:
+  src/graphql/generated/types.ts:
+    config:
+      scalars:
+        DateTime: Date
+        EmailAddress: string
+      useIndexSignature: true
+      contextType: ../graphqlContextType#GraphQLContext
+      mappers:
+        Employee: ../../services/models/employee#EmployeeType
+      enumValues: 
+        EmployeeTypeEnum: ../../services/models/employee#EmployeeTypeEnum
+        EmployeeDepartmentEnum: ../../services/models/employee#EmployeeDepartmentEnum
+        EmployeeTitleEnum: ../../services/models/employee#EmployeeTitleEnum
+        EmployeeStatusEnum: ../../services/models/employee#EmployeeStatusEnum
+    plugins:
+      - "typescript"
+      - "typescript-resolvers"
