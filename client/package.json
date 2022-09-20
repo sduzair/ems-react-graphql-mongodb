@@ -10,9 +10,11 @@
     "codegen": "graphql-codegen --config codegen.yml --watch"
   },
   "dependencies": {
+    "@aws-amplify/ui-react": "^3.5.2",
     "@tanstack/react-query": "^4.0.10",
     "ag-grid-community": "^28.0.0",
     "ag-grid-react": "^28.0.0",
+    "aws-amplify": "^4.3.35",
     "graphql": "^16.5.0",
     "react": "^18.2.0",
     "react-bootstrap": "^2.4.0",
