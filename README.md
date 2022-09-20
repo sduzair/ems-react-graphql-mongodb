@@ -7,10 +7,12 @@
 2. Run application server 
 	1. `cd server`
 	2. Create .env file and enter following values
-		- ```DB_CONN_STRING="<connection URI>"
+		- ```
+			DB_CONN_STRING="<connection URI>"
 			DB_NAME="spring22-ems"
 			EMPLOYEES_COLLECTION_NAME="employees"
-			PORT=3000```
+			PORT=3000
+			```
 	3. `npm i`
 	4. `npm run build`
 	5. `node dist/index.js`
