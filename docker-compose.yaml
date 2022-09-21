@@ -1,0 +1,22 @@
+version: '1'
+services:
+  app: 
+    container_name: app
+    restart: always
+    build: ./server
+    environment:
+      - DB_CONN_STRING=mongodb://mongo:27017
+      - DB_NAME=spring22-ems
+      - EMPLOYEES_COLLECTION_NAME=employees
+      - PORT=3000
+    ports:
+      - "3000:3000"
+    # links:
+      # - mongo
+  mongo: 
+    container_name: mongo
+    build: .
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./mongoimportscript.sh:/docker-entrypoint-initdb.d/mongoimportscript.sh:ro
