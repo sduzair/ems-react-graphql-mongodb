@@ -1,7 +1,15 @@
 version: '1'
 services:
-  app: 
-    container_name: app
+  react:
+    container_name: react
+    restart: always
+    build: ./client
+    environment:
+      - VITE_GRAPHQL_URL=http://graphql-express:3000/graphql
+    ports:
+      - "4173:4173"
+  graphql-express: 
+    container_name: graphql-express
     restart: always
     build: ./server
     environment:

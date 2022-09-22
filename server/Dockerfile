@@ -7,7 +7,7 @@ COPY . .
 RUN npm run build
 
 FROM node:lts-alpine as production
-ENV NODE_ENV=development
+ENV NODE_ENV=production
 WORKDIR /usr/src/app
 COPY ["package.json", "package-lock.json*", "npm-shrinkwrap.json*", "./"]
 RUN npm install --production --silent 
