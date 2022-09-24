@@ -1,5 +1,10 @@
 # Steps to start the Employee Management Application
 
+## With Docker
+	1. `docker-compose build`
+	2. `docker-compose up`
+
+## Without Docker
 1. Setup MongoDB database
 	1. Install and run Mongodb
 	2. Import employees data into "spring22-ems" database
