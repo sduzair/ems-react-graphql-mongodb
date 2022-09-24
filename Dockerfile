@@ -1,7 +1,9 @@
 FROM mongo
-# WORKDIR /usr/src/mongodb
 COPY spring22-ems_DBDUMP/employees.json ./employees.json
-# COPY mongoimportscript.sh ./mongoimportscript.sh
-RUN chmod 777 /employees.json
-# RUN chmod 777 /docker-entrypoint-initdb.d/mongoimportscript.sh  
+# RUN mkdir -p /docker-entrypoint-initdb.d
+# COPY spring22-ems_DBDUMP/employees.json ./docker-entrypoint-initdb.d/employees.json
+# COPY mongoimportscript.sh ./docker-entrypoint-initdb.d/mongoimportscript.sh
+# WORKDIR /docker-entrypoint-initdb.d
+# RUN chmod +x mongoimportscript.sh
+# RUN mongoimportscript.sh
 CMD ["mongod"]
