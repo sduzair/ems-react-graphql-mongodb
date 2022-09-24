@@ -1,8 +1,8 @@
 # Steps to start the Employee Management Application
 
 ## With Docker
-	1. `docker-compose build`
-	2. `docker-compose up`
+1. `docker-compose build`
+2. `docker-compose up`
 
 ## Without Docker
 1. Setup MongoDB database
