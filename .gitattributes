@@ -1,0 +1,3 @@
+.sh text eol=lf
+
+# Without .gitattributes file you have to ensure git is set to `git config --global core.autocrlf false` to prevent git from auto-converting line endings (CRLF/LF)
