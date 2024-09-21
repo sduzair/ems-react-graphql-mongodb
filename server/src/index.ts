@@ -9,6 +9,7 @@ import { GraphQLScalarType, Kind } from "graphql";
 require('dotenv').config();
 import typeDefs from "./graphql/typedefs/typedefs";
 import { resolvers } from "./graphql/resolvers/resolvers";
+import { ApolloLoggerPlugin } from 'apollo-server-logging';
 
 (async function startApolloServer() {
   const app = express();
@@ -19,7 +20,10 @@ import { resolvers } from "./graphql/resolvers/resolvers";
     resolvers: resolvers,
     csrfPrevention: true,
     cache: 'bounded',
-    plugins: [ApolloServerPluginDrainHttpServer({ httpServer })],
+    plugins: [
+      ApolloServerPluginDrainHttpServer({ httpServer }),
+      ApolloLoggerPlugin({})
+    ],
     context: async () => ({
       collections: collections
     })

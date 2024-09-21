@@ -24,11 +24,13 @@
     "@konfy/graphql-mongo-query": "^2.0.6",
     "apollo-server-core": "3.13.0",
     "apollo-server-express": "^3.10.0",
+    "apollo-server-logging": "^1.0.2",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "graphql": "^16.5.0",
     "graphql-scalars": "^1.17.0",
-    "mongodb": "^4.0.1"
+    "mongodb": "^4.0.1",
+    "pino": "^9.4.0"
   },
   "devDependencies": {
     "@graphql-codegen/cli": "2.9.1",
