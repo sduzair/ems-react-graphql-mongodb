@@ -10,6 +10,7 @@ require('dotenv').config();
 import typeDefs from "./graphql/typedefs/typedefs";
 import { resolvers } from "./graphql/resolvers/resolvers";
 import { ApolloLoggerPlugin } from 'apollo-server-logging';
+import path from "path";
 
 (async function startApolloServer() {
   const app = express();
@@ -30,7 +31,18 @@ import { ApolloLoggerPlugin } from 'apollo-server-logging';
   });
 
   await server.start();
+    
+  // Serve static react files
+  app.use(express.static(path.join(__dirname, 'public')));
+
+  // Apollo middleware
   server.applyMiddleware({ app });
+
+  // Handle any requests that don't match the above
+  app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+  });
+
   await new Promise(resolve => httpServer.listen({ port: process.env.PORT }, resolve as () => void));
   console.log(`🚀 Server ready at http://localhost:${process.env.PORT}${server.graphqlPath}`);
 })()
