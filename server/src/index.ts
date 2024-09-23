@@ -49,8 +49,8 @@ import path from "path";
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
   });
 
-  await new Promise(resolve => httpServer.listen({ port: process.env.PORT }, resolve as () => void));
-  console.log(`🚀 Server ready at http://localhost:${process.env.PORT}${server.graphqlPath}`);
+  await new Promise(resolve => httpServer.listen({ port: process.env.PORT || 4000}, resolve as () => void));
+  console.log(`🚀 Server ready at http://localhost:${process.env.PORT || 4000}${server.graphqlPath}`);
 })()
 
 
