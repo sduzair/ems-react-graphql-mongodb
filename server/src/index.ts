@@ -35,6 +35,12 @@ import path from "path";
   // Serve static react files
   app.use(express.static(path.join(__dirname, 'public')));
 
+
+  // Add redirect for /update/graphql to /graphql
+  app.use('/update/graphql', (req, res) => {
+    res.redirect(307, '/graphql');
+  });
+
   // Apollo middleware
   server.applyMiddleware({ app });
 
