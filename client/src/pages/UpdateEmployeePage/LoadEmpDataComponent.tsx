@@ -1,6 +1,6 @@
-import React from 'react'
-import { Alert } from 'react-bootstrap'
-import { GetOneEmployeeQuery, useGetOneEmployeeQuery } from '../../graphql/generated'
+import Alert from 'react-bootstrap/Alert'
+import type { GetOneEmployeeQuery } from '../../graphql/generated'
+import { useGetOneEmployeeQuery } from '../../graphql/generated'
 import UpdateEmployeeForm from './UpdateEmployeeForm'
 import { FiAlertTriangle } from 'react-icons/fi'
 

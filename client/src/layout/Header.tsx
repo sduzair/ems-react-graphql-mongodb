@@ -1,6 +1,7 @@
-import React from 'react'
 import { LinkContainer } from 'react-router-bootstrap'
-import { Container, Nav, Navbar } from 'react-bootstrap'
+import Navbar from 'react-bootstrap/Navbar'
+import Nav from 'react-bootstrap/Nav'
+import Container from 'react-bootstrap/Container'
 
 interface Props { }
 

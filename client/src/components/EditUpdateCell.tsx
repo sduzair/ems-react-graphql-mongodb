@@ -1,14 +1,12 @@
-import React, { RefObject, useMemo, useRef, useState } from 'react';
+import { RefObject } from 'react';
 import { ICellRendererParams } from 'ag-grid-community';
 import { RiDeleteBin6Fill } from 'react-icons/ri';
-import { AiFillCheckCircle, AiTwotoneEdit } from 'react-icons/ai';
-import { DeleteOneEmployeeInput, Employee, useDeleteOneEmployeeMutation } from '../graphql/generated';
-import { useCallback } from 'react';
+import { AiTwotoneEdit } from 'react-icons/ai';
+import type { Employee } from '../graphql/generated';
+import { useDeleteOneEmployeeMutation } from '../graphql/generated';
 import { AgGridReact } from 'ag-grid-react';
-import { Alert } from 'react-bootstrap';
-import { QueryClient, useQueryClient } from '@tanstack/react-query';
+import { useQueryClient } from '@tanstack/react-query';
 import { LinkContainer } from 'react-router-bootstrap';
-import { AlertData } from '../pages/EmployeesPage';
 import { toast } from 'react-toastify';
 
 interface Props extends ICellRendererParams<Employee> {

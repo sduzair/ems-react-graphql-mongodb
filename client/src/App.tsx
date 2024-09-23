@@ -1,6 +1,4 @@
-import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { UpdateOneEmployeeDocument } from './graphql/generated';
 import Header from './layout/Header';
 import CreateEmployeePage from './pages/CreateEmployeePage';
 import EmployeesPage from './pages/EmployeesPage';

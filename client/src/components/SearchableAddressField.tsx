@@ -1,7 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 import React, { useEffect } from 'react'
-import { ControllerRenderProps, DeepRequired, FieldError, FieldErrors, FieldErrorsImpl, FieldPath, UseFormSetValue } from 'react-hook-form'
-import Select, { ActionMeta, GroupBase, InputActionMeta, OptionsOrGroups, SingleValue } from 'react-select'
+import { ControllerRenderProps, FieldError, FieldPath, UseFormSetValue } from 'react-hook-form'
+import Select, { ActionMeta, GroupBase, InputActionMeta, SingleValue } from 'react-select'
 import { EmployeeCreateForm } from '../pages/CreateEmployeePage';
 
 interface Props<TName extends FieldPath<EmployeeCreateForm>> {

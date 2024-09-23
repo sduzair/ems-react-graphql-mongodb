@@ -1,12 +1,11 @@
-import React, { LegacyRef, useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { useMemo, useRef, useState } from 'react'
 import { AgGridReact } from 'ag-grid-react'; // the AG Grid React Component
 import 'ag-grid-community/styles/ag-grid.css'; // Core grid CSS, always needed
 import 'ag-grid-community/styles/ag-theme-alpine.css'; // Optional theme CSS
 import { ColDef, ColGroupDef, GetRowIdFunc, GetRowIdParams } from 'ag-grid-community';
 import { Employee, GetEmployeesQuery, useGetEmployeesQuery } from '../graphql/generated';
 import EditUpdateCell from '../components/EditUpdateCell';
-import { AiFillCheckCircle, AiFillCloseCircle } from 'react-icons/ai';
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 interface Props { }

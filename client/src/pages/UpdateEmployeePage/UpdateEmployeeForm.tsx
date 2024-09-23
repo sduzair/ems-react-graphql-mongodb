@@ -1,13 +1,20 @@
 import { useQueryClient } from '@tanstack/react-query';
-import React, { useCallback, useEffect, useState } from 'react'
-import { Alert, Col, Container, Row } from 'react-bootstrap';
-import { Controller, SubmitHandler, useForm } from 'react-hook-form';
+import React, { useEffect, useState } from 'react'
+import Row from 'react-bootstrap/Row';
+import Container from 'react-bootstrap/Container';
+import Col from 'react-bootstrap/Col';
+import Alert from 'react-bootstrap/Alert';
+import { Controller, type SubmitHandler, useForm } from 'react-hook-form';
 import { AiFillCheckCircle } from 'react-icons/ai';
 import { LinkContainer } from 'react-router-bootstrap';
 import Select from 'react-select';
 import SearchableAddressField from '../../components/SearchableAddressField';
-import { EmployeeStatusEnum, EmployeeUpdateInput, Exact, GetOneEmployeeQuery, OneEmployeeQueryInput, useUpdateOneEmployeeMutation } from '../../graphql/generated'
-import { EmployeeCreateForm, employeeDepartmentOptions, employeeTitleOptions, employeeTypeOptions, phoneRegex } from '../CreateEmployeePage';
+import {
+  EmployeeStatusEnum, 
+} from '../../graphql/generated'
+import type { EmployeeUpdateInput, Exact, GetOneEmployeeQuery, OneEmployeeQueryInput } from '../../graphql/generated'
+import { useUpdateOneEmployeeMutation } from '../../graphql/generated'
+import { type EmployeeCreateForm, employeeDepartmentOptions, employeeTitleOptions, employeeTypeOptions, phoneRegex } from '../CreateEmployeePage';
 
 interface Props {
   initialFormData: GetOneEmployeeQuery,
