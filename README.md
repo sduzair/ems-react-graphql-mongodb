@@ -1,39 +1,45 @@
-# Steps to start the Employee Management Application
+# Employee Management SPA
 
-## With Docker
-1. `docker-compose build`
-2. `docker-compose up`
+- [Employee Management SPA](#employee-management-spa)
+	- [Overview](#overview)
+	- [Features](#features)
+	- [Tech Stack](#tech-stack)
+		- [Frontend](#frontend)
+		- [Backend](#backend)
+		- [DevOps](#devops)
 
-## Without Docker
-1. Setup MongoDB database
-	1. Install and run Mongodb
-	2. Import employees data into "spring22-ems" database
-		- `mongoimport --uri="<connection URI>/spring22-ems" --drop server/spring22-ems_DBDUMP/employees.json`
-2. Run GraphQL server 
-	1. `cd server`
-	2. Create .env file and enter following values
-		- ```
-			DB_CONN_STRING="<connection URI>"
-			DB_NAME="spring22-ems"
-			EMPLOYEES_COLLECTION_NAME="employees"
-			PORT=3000
-			```
-	3. `npm i`
-	4. `npm run build`
-	5. `node dist/index.js`
-3. Run developement server
-	1. `cd client`
-	2. Create .env file with following environment variables
-		- ```
-			VITE_GRAPHQL_URL="<graphql server url>"
-			```
-	3. `npm i`
-	4. `npm run build`
-	5. `npm run preview`
-4. Open browser and go to the url in command line
+## Overview
 
-## Additional Info
+This project is a Single Page Application (SPA) for employee management, featuring CRUD operations and advanced data handling capabilities. It's built with modern web technologies to ensure a smooth, efficient, and user-friendly experience.
 
-- React SPA code is under client/src
-- Express server code is under server/src
+## Features
 
+- **CRUD Operations**: Create, Read, Update, and Delete employee records
+- **Advanced Data Handling**:
+  - Filtering
+  - Sorting
+  - Searching
+- **Optimized Performance**: Utilizes React Query for efficient caching
+- **Enhanced User Experience**: Custom-designed, user-friendly forms
+- **Responsive Design**: Built with Bootstrap for a mobile-first approach
+
+## Tech Stack
+
+### Frontend
+
+- React
+- React Query
+- AG Grid
+- Bootstrap
+
+### Backend
+
+- GraphQL
+- Express
+- MongoDB
+
+### DevOps
+
+- Git
+- Docker
+- GitHub Workflow (CI/CD)
