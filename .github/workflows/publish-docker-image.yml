@@ -47,28 +47,26 @@ jobs:
           cache-to: type=registry,ref=${{ env.IMAGE_NAME }}:buildcache,mode=max
           sbom: true
 
-  # trigger-renderer-deployment:
-  #   needs: docker
-  #   concurrency:
-  #     group: ${{ github.event.repository.full_name }}-docker-push
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - name: Deploy
-  #       env:
-  #         deploy_url: ${{ secrets.RENDERER_DEPLOY_HOOK_URL }}
-  #       run: |
-  #         set -e
-  #         echo "Starting deployment..."
+  trigger-renderer-deployment:
+    needs: docker
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy
+        env:
+          deploy_url: ${{ secrets.RENDERER_DEPLOY_HOOK_URL }}
+        run: |
+          set -e
+          echo "Starting deployment..."
 
-  #         # Capture the response body and status code
-  #         response=$(curl -s -w "%{http_code}" -o response_body.txt "${{ env.deploy_url }}&imgURL=docker.io%2F${{ github.repository_owner }}%2F${{ github.event.repository.name }}%3Alatest")
-  #         response_body=$(cat response_body.txt)
+          # Capture the response body and status code
+          response=$(curl -s -w "%{http_code}" -o response_body.txt "${{ env.deploy_url }}&imgURL=docker.io%2F${{ github.repository_owner }}%2F${{ github.event.repository.name }}%3Alatest")
+          response_body=$(cat response_body.txt)
 
-  #         echo "Deployment response code: $response"
-  #         echo "Deployment response body: $response_body"
+          echo "Deployment response code: $response"
+          echo "Deployment response body: $response_body"
 
-  #         if [ "$response" -ne 200 ]; then
-  #           echo "Deployment failed with response code $response" >&2
-  #           echo "Error response body: $response_body" >&2
-  #           exit 1
-  #         fi
+          if [ "$response" -ne 200 ]; then
+            echo "Deployment failed with response code $response" >&2
+            echo "Error response body: $response_body" >&2
+            exit 1
+          fi
